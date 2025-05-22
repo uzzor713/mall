@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import 'element-plus/es/components/message/style/css'
 import { ElMessage } from 'element-plus';
 import { useRouter } from 'vue-router';
-import { useUserStore } from '@/stores/user';
+import { useUserStore } from '@/stores/userStore';
 
 const userStore = useUserStore()
 //表单校验 (账户名+密码)
