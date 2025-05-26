@@ -74,16 +74,17 @@ const selectedPrice = computed(()=> cartList.value.filter(item => item.selected)
 
   return {
     cartList,
-    addCart,
-    delCart,
     allCount,
     allPrice,
-    singleCheck,
     isAll,
-    allCheck,
     selectedPrice,
     selectedCount,
+    addCart,
+    addCart,
+    delCart,
+    singleCheck,
     clearCart,
+    allCheck,
     updateNewList
   }
 },{
