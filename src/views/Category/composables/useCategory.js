@@ -14,6 +14,7 @@ export function useCategory(){
     categoryData.value = res.result
   }
   onMounted(() => getCategory())
+  //路由守卫,监听路由参数变化
   onBeforeRouteUpdate((to) => {
     getCategory(to.params.id)
   })

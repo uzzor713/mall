@@ -38,7 +38,7 @@ const { categoryData } = useCategory()
       </div>
         <div class="ref-goods" v-for="item in categoryData.children" :key="item.id">
           <div class="head">
-            <h3>- {{ item.name }}-</h3>
+            <h3>-{{ item.name }}-</h3>
           </div>
           <div class="body">
             <GoodsItem v-for="good in item.goods" :goods="good" :key="good.id" />

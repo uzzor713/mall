@@ -13,7 +13,8 @@ const httpInstance = axios.create({
 //拦截器
 
 //axios请求拦截器
-httpInstance.interceptors.request.use(config => {
+httpInstance.interceptors.request.use(
+  config => {
   //1.从pinia获取token数据
   const userStore = useUserStore()
   //2.按照后端的要求拼接token数据

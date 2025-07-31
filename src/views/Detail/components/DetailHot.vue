@@ -45,6 +45,9 @@ onMounted(()=>getHotList())
 
 <style scoped lang="scss">
 .goods-hot {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   h3 {
     height: 70px;
     background: $helpColor;
@@ -54,6 +57,8 @@ onMounted(()=>getHotList())
     padding-left: 25px;
     margin-bottom: 10px;
     font-weight: normal;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .goods-item {
@@ -61,7 +66,8 @@ onMounted(()=>getHotList())
     padding: 20px 30px;
     text-align: center;
     background: #fff;
-
+    width: 100%;
+    box-sizing: border-box;
     img {
       width: 160px;
       height: 160px;
