@@ -1,18 +1,29 @@
-name: Deploy GitHub Pages
+name: Deploy to GitHub Pages
+
 on:
   push:
-    branches: [main]  # 监听 main 分支推送
+    branches: [main]  # 监听 main 分支的推送
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: npm install
-      - run: npm run build  # 自动生成 dist
-      - uses: peaceiris/actions-gh-pages@v4
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build  # 生成 dist 文件夹
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # 部署 dist 内容
+          publish_dir: ./dist  # 必须指向 dist 文件夹
